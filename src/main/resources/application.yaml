@@ -1,0 +1,93 @@
+# ===================================================================
+# Application data
+# ===================================================================
+
+application:
+  name: @project.artifactId@
+
+build:
+  version: @project.version@
+  timestamp: @maven.build.timestamp@
+
+# ===================================================================
+# Security
+# ===================================================================
+
+security:
+  jwt:
+    secretkey: 878b75b1a38838163ee71f80725fb42fd091887e0bb5b370a313e2de91a99f4736403d7fbca8f3ee796578a3b2692cf1f6d2e6d0537d8e238ef2340ab2e5ef7b
+
+# ===================================================================
+# Server - context
+# ===================================================================
+
+server:
+  servlet:
+    context-path: /users-api
+
+# ===================================================================
+# Rest Client properties
+# ===================================================================
+
+restclient:
+  bqm:
+    base-url: http://localhost:9999
+    proxy-host: http://localhost
+    proxy-port: 9999
+    users:
+      client-id: bqm-client-id
+      client-password: bqm-client-password
+      connectionTimeout: 60 # time in seconds
+      path-user: /canales-broker/v1/users
+      path-user-identifier: /canales-broker/v1/users/{idUser}
+    accounts:
+      path-account: /canales-broker/v1/cuentas
+      path-account-bets: /canales-broker/v1/cuentas/apuestas
+      path-account-movements: /canales-broker/v1/cuentas/movimientos
+      path-account-register-bank: /canales-broker/v1/cuentas/agregar-cuenta-banco
+    deposits:
+      path-deposit: /canales-broker/v1/depositos
+      path-deposit-card: /canales-broker/v1/depositos/tarjeta
+      path-deposit-online: /canales-broker/v1/depositos/online
+      path-deposit-transference: /canales-broker/v1/depositos/transferencia
+    common:
+      path-banks: /canales-broker/v1/datos/bancos
+      path-cards: /canales-broker/v1/datos/tarjetas
+      path-countries: /canales-broker/v1/datos/paises
+      path-currencies: /canales-broker/v1/datos/monedas
+      path-payment-methods: /canales-broker/v1/datos/metodos-pago
+    limits:
+      path-amount-limit: /canales-broker/v1/limites/cantidad
+      path-time-limit: /canales-broker/v1/limites/tiempo
+      path-exclusion-limit: /canales-broker/v1/limites/autoexcluir
+    withdrawals:
+      path-withdrawal-conf: /canales-broker/v1/retiros/configurar
+      path-withdrawal-withdraw: /canales-broker/v1/retiros/retirar
+
+
+# ===================================================================
+# Application testing properties
+# ===================================================================
+
+unitTest:
+  url: http://localhost
+
+
+# ===================================================================
+# Open API - springdoc - swagger
+# ===================================================================
+
+#disable-swagger-default-url: true
+#springdoc:
+    #  api-docs:
+    #    enabled: true
+  #    path: /v3/api-docs
+    #  swagger-ui:
+    #    path: /swagger-ui.html
+    #    display-request-duration: false
+    #    tags-sorter: alpha
+    #    operations-sorter: alpha
+    #    defaultModelRendering: example
+    #    doc-expansion: none
+    #    config-url: /v3/api-docs/swagger-config
+#    url: /v3/api-docs

@@ -10,9 +10,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>uy.com.demente.ideas</groupId>
-    <artifactId>backend-api</artifactId>
+    <artifactId>clean-architecture-rest-api-jwt</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>backend-api</name>
+    <name>clean-architecture-rest-api-jwt</name>
     <packaging>war</packaging>
     <description>Backend API</description>
 

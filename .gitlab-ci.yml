@@ -17,7 +17,7 @@ build:
   script: ./mvnw package
   artifacts:
     paths:
-      - target/backend-api-0.0.1-SNAPSHOT.war
+      - target/clean-architecture-rest-api-jwt-0.0.1-SNAPSHOT.war
 
 variables:
   SONAR_TOKEN: "0b9bff237ae73e371877d117e3cbfeccbeb18861"
@@ -39,6 +39,6 @@ deploy_aws_dev:
     - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
     - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
     - aws configure set region $AWS_DEFAULT_REGION
-    - aws s3 cp target/backend-api-0.0.1-SNAPSHOT.war s3://elasticbeanstalk-us-east-1-079361136472/backend-api-$CI_PIPELINE_ID.war
-    - aws elasticbeanstalk create-application-version --application-name SM2-Backend-API --version-label backend-api-$CI_PIPELINE_ID --source-bundle S3Bucket=elasticbeanstalk-us-east-1-079361136472,S3Key=backend-api-$CI_PIPELINE_ID.war
-    - aws elasticbeanstalk update-environment --application-name SM2-Backend-API --environment-name Env-Sm2BackendApi --version-label backend-api-$CI_PIPELINE_ID
+    - aws s3 cp target/clean-architecture-rest-api-jwt-0.0.1-SNAPSHOT.war s3://elasticbeanstalk-us-east-1-079361136472/clean-architecture-rest-api-jwt-$CI_PIPELINE_ID.war
+    - aws elasticbeanstalk create-application-version --application-name SM2-Backend-API --version-label clean-architecture-rest-api-jwt-$CI_PIPELINE_ID --source-bundle S3Bucket=elasticbeanstalk-us-east-1-079361136472,S3Key=clean-architecture-rest-api-jwt-$CI_PIPELINE_ID.war
+    - aws elasticbeanstalk update-environment --application-name SM2-Backend-API --environment-name Env-Sm2BackendApi --version-label clean-architecture-rest-api-jwt-$CI_PIPELINE_ID
